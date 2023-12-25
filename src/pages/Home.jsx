@@ -16,7 +16,7 @@ export default function Home() {
     useEffect(() => {
         const fetchOfferListings = async () => {
             try {
-                const res = await fetch('/api/listing/get?offer=true&limit=4');
+                const res = await fetch('https://back-rho-six.vercel.app/api/listing/get?offer=true&limit=4');
                 const data = await res.json();
                 setOfferListings(data);
                 fetchRentListings();
@@ -26,7 +26,7 @@ export default function Home() {
         };
         const fetchRentListings = async () => {
             try {
-                const res = await fetch('/api/listing/get?type=rent&limit=4');
+                const res = await fetch('https://back-rho-six.vercel.app/api/listing/get?type=rent&limit=4');
                 const data = await res.json();
                 setRentListings(data);
                 fetchSaleListings();
@@ -37,7 +37,7 @@ export default function Home() {
 
         const fetchSaleListings = async () => {
             try {
-                const res = await fetch('/api/listing/get?type=sale&limit=4');
+                const res = await fetch('https://back-rho-six.vercel.app/api/listing/get?type=sale&limit=4');
                 const data = await res.json();
                 setSaleListings(data);
             } catch (error) {
@@ -74,7 +74,7 @@ export default function Home() {
                     to={'/search'}
                     className='text-white border-[0.5px] border-white p-3 rounded-xl text-center w-[40%] mx-auto shadow-black shadow-2xl hover:bg-white hover:text-black duration-1000 hover:scale-110 hover:shadow-[blue]'
                 >
-                    Let's get started...
+                    Lets get started...
                 </Link>
             </div>
 
@@ -82,9 +82,10 @@ export default function Home() {
             <Swiper navigation>
                 {offerListings &&
                     offerListings.length > 0 &&
-                    offerListings.map((listing) => (
-                        <SwiperSlide>
+                    offerListings.map((listing,ind) => (
+                        <SwiperSlide key={ind}>
                             <div
+                             
                                 style={{
                                     background: `url(${listing.imageUrls[0]}) center no-repeat`,
                                     backgroundSize: 'cover',

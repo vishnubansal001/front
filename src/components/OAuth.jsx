@@ -14,7 +14,7 @@ export default function OAuth() {
 
       const result = await signInWithPopup(auth, provider);
 
-      const res = await fetch('/api/auth/google', {
+      const res = await fetch('https://back-rho-six.vercel.app/api/auth/google', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
