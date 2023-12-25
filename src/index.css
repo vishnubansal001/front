@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    background: black;
+}
+
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+.blur_it {
+    backdrop-filter: blur(20px);
+    background-color: rgba(0,0,0,0.35);
+}
+
+select option {
+   background-color: black;
+    color: white;
+    border: 0.5px solid white;
+}
+
+input[type="file"]{
+
+}
