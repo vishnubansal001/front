@@ -31,7 +31,7 @@ export default function Header() {
             <div className='flex justify-between items-center max-w-6xl  mx-auto p-2'>
                 <Link to='/'>
                     <h1 className='font-bold text-[2rem] flex flex-wrap'>
-                        Anjulli Real Estate
+                        Aanjulli Real Estate
                     </h1>
                 </Link>
                 <ul className='flex gap-4 text-white items-center'>
