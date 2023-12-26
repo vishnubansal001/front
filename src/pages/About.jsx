@@ -13,8 +13,8 @@ export default function About() {
   return (
     <div style={{background: `radial-gradient(circle farthest-side at ${mousePosition.x}px ${mousePosition.y}px, #000053 0%, transparent 100%)`}} className='py-20 px-4 w-fit h-screen  mx-auto'>
         <div className={`w-[60%] mx-auto mt-[6rem]`}>
-            <h1 className='text-[6rem] text-center font-bold mb-4 text-white'>About Anjulli Real Estate</h1>
-            <p className='mb-4 text-gray-200 text-justify'>Anjulli Real Estate, since 2006 is a leading real estate agency that specializes in helping clients buy, sell, and rent properties in the most desirable neighborhoods. Our team of experienced agents is dedicated to providing exceptional service and making the buying and selling process as smooth as possible.</p>
+            <h1 className='text-[6rem] text-center font-bold mb-4 text-white'>About Aanjulli Real Estate</h1>
+            <p className='mb-4 text-gray-200 text-justify'>Aanjulli Real Estate, since 2006 is a leading real estate agency that specializes in helping clients buy, sell, and rent properties in the most desirable neighborhoods. Our team of experienced agents is dedicated to providing exceptional service and making the buying and selling process as smooth as possible.</p>
             <p className='mb-4 text-gray-200 text-justify'>
                 Our mission is to help our clients achieve their real estate goals by providing expert advice, personalized service, and a deep understanding of the local market. Whether you are looking to buy, sell, or rent a property, we are here to help you every step of the way.
             </p>
