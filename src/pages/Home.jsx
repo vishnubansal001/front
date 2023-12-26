@@ -65,7 +65,7 @@ export default function Home() {
 
                 </h1>
                 <div className='text-gray-400 text-center'>
-                    Anjulli Real Estate is the best place to find your next perfect place to
+                    Aanjulli Real Estate is the best place to find your next perfect place to
                     live.
                     <br/>
                     We have a wide range of properties for you to choose from.
