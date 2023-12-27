@@ -8,7 +8,6 @@ export default function Header() {
     const {currentUser} = useSelector((state) => state.user);
     const [searchTerm, setSearchTerm] = useState('');
     const navigate = useNavigate();
-    const isMobile = useMediaQuery({maxWidth: 768});
     const handleSubmit = (e) => {
         e.preventDefault();
         const urlParams = new URLSearchParams(window.location.search);
@@ -27,60 +26,64 @@ export default function Header() {
     const [showSearch, setShowSearch] = useState(false);
     if(window.location.pathname === "/search") return null;
     else return (
-        <header className='blur_it shadow-2xl text-white z-[10000] fixed w-full lg:w-[70%] px-10 left-1/2 -translate-x-1/2 border-[0.5px] border-white rounded-xl top-[1rem]'>
+        <header
+            className='blur_it shadow-2xl text-white z-[10000] fixed w-full lg:w-[70%] px-10 left-1/2 -translate-x-1/2 border-[0.5px] border-white rounded-xl top-[1rem]'>
             <div className='flex justify-between items-center max-w-6xl  mx-auto p-2'>
                 <Link to='/'>
-                    <h1 className='font-bold text-[2rem] flex flex-wrap'>Aanjulli Real Estate</h1>
+                    <h1 className='font-bold text-[2rem] flex flex-wrap'>
+                        Aanjulli Real Estate
+                    </h1>
                 </Link>
                 <ul className='flex gap-4 text-white items-center'>
                     <Link to='/'>
-                        <li className={isMobile ? 'block' : 'hidden sm:inline'}>Home</li>
+                        <li className='hidden sm:inline'>Home</li>
                     </Link>
                     <Link to='/about'>
-                        <li className={isMobile ? 'block' : 'hidden sm:inline'}>About</li>
+                        <li className='hidden sm:inline '>About</li>
                     </Link>
-                    {isMobile && (
-                        <Link to='/profile'>
-                            {currentUser ? (
-                                <img className='rounded-full h-7 w-7 object-cover' src={currentUser.avatar} alt='profile' />
-                            ) : (
-                                <li> Sign in</li>
-                            )}
-                        </Link>
-                    )}
-                    {isMobile && (
-                        <button className={`flex relative items-center gap-2`} onClick={() => setShowSearch(!showSearch)}>
+                    <Link to='/profile'>
+                        {currentUser ? (
+                            <img
+                                className='rounded-full h-7 w-7 object-cover'
+                                src={currentUser.avatar}
+                                alt='profile'
+                            />
+                        ) : (
+                            <li className=''> Sign in</li>
+                        )}
+                    </Link>
+                    {
+                        !showSearch && <button className={`flex relative items-center gap-2`} onClick={() => setShowSearch(!showSearch)}>
                             Search
-                            <FaSearch size={11} />
-                            <div className={`w-full bg-white absolute h-[0.5px] bottom-[-2px]`} />
+                        <FaSearch size={11}/>
+                        <div className={`w-full bg-white absolute h-[0.5px] bottom-[-2px]`}/>
                         </button>
-                    )}
-                    {isMobile && showSearch && (
-                        <div>
+                    }
+                    {
+                        showSearch && <div>
                             <form
                                 onSubmit={handleSubmit}
                                 className='border-[0.5px] gap-[0.5rem] p-2 rounded-lg flex items-center'
                             >
-                                <input
-                                    type='text'
-                                    placeholder='Search...'
-                                    className='bg-transparent focus:outline-none w-24 sm:w-64'
-                                    value={searchTerm}
-                                    onChange={(e) => setSearchTerm(e.target.value)}
-                                />
+                                <input type="text"
+                                       placeholder="Search..."
+                                       className='bg-transparent focus:outline-none w-24 sm:w-64'
+                                       value={searchTerm}
+                                       onChange={(e) => setSearchTerm(e.target.value)}/>
                                 <button>
-                                    <FaSearch className='text-slate-600' />
+                                    <FaSearch className='text-slate-600'/>
                                 </button>
                             </form>
                         </div>
-                    )}
-                    {isMobile && showSearch && (
-                        <div className={`cursor-pointer`} onClick={() => setShowSearch(!showSearch)}>
-                            <RxCross1 />
+                    }
+                    {
+                        showSearch && <div className={`cursor-pointer`} onClick={() => setShowSearch(!showSearch)}>
+                        <RxCross1 />
                         </div>
-                    )}
+                    }
                 </ul>
+
             </div>
         </header>
-    );
+    )
 }
