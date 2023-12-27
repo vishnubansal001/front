@@ -49,14 +49,16 @@ export default function Header() {
                                 alt='profile'
                             />
                         ) : (
-                            <li className=''> Sign in</li>
-                        )}
-                    </Link>
-                    {
-                        !showSearch && <button className={`flex relative items-center gap-2`} onClick={() => setShowSearch(!showSearch)}>
+                                <li className=''> Sign in</li>
+                            )}
+                        </Link>
+                        <button
+                            className={`relative items-center gap-2 hidden sm:flex`}  // hide on mobile
+                            onClick={() => setShowSearch(!showSearch)}
+                        >
                             Search
-                        <FaSearch size={11}/>
-                        <div className={`w-full bg-white absolute h-[0.5px] bottom-[-2px]`}/>
+                            <FaSearch size={11} />
+                            <div className={`w-full bg-white absolute h-[0.5px] bottom-[-2px]`} />
                         </button>
                     }
                     {
@@ -71,7 +73,7 @@ export default function Header() {
                                        value={searchTerm}
                                        onChange={(e) => setSearchTerm(e.target.value)}/>
                                 <button>
-                                    <FaSearch className='text-slate-600'/>
+                                    <FaSearch className='text-slate-600 hidden sm-inline'/>
                                 </button>
                             </form>
                         </div>
