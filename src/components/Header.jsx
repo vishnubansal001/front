@@ -60,7 +60,6 @@ export default function Header() {
                             <FaSearch size={11} />
                             <div className={`w-full bg-white absolute h-[0.5px] bottom-[-2px]`} />
                         </button>
-                    }
                     {
                         showSearch && <div>
                             <form
