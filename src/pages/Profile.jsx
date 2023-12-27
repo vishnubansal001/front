@@ -243,7 +243,7 @@ export default function Profile() {
           Delete<span className={`text-transparent`}>_</span>Account
         </span>
                     <button onClick={handleShowListings}
-                            className='text-green-500  underline-offset-8 hover:underline  '>
+                            className='text-green-500  underline-offset-8 hover:underline mt-10 '>
                         Show Listings
                     </button>
                     <span onClick={handleSignOut}
