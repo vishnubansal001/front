@@ -24,7 +24,7 @@ export default function Header() {
         }
     }, [location.search]);
     const [showSearch, setShowSearch] = useState(false);
-    if(window.location.pathname === "/search") return;
+    if(window.location.pathname === "/search") return null;
     else return (
         <header
             className='blur_it shadow-2xl text-white z-[10000] fixed w-full lg:w-[70%] px-10 left-1/2 -translate-x-1/2 border-[0.5px] border-white rounded-xl top-[1rem]'>
